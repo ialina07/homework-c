@@ -1,12 +1,13 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 
 typedef union {
     double value;
     uint64_t bits;
 } DoubleUnion;
 
-void printDoubleExponential(double num) {
+void printDoubleExponential(double num)
+{
     DoubleUnion du;
     du.value = num;
 
@@ -57,7 +58,8 @@ void printDoubleExponential(double num) {
     printf("%.20f*2^%d\n", m, exponent);
 }
 
-int main() {
+int main()
+{
     double number;
 
     printf("Enter a number: ");
