@@ -1,8 +1,9 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 
 // Функция для преобразования числа в двоичное представление в дополнительном коде
-void toTwosComplement(int num, char* binary) {
+void toTwosComplement(int num, char* binary)
+{
     if (num >= 0) {
         // Положительное число - прямое представление
         for (int i = 7; i >= 0; i--) {
@@ -22,7 +23,8 @@ void toTwosComplement(int num, char* binary) {
 }
 
 // Функция для преобразования двоичного дополнительного кода в число
-int fromTwosComplement(const char* binary) {
+int fromTwosComplement(const char* binary)
+{
     int result = 0;
 
     // Если старший бит = 1, число отрицательное
@@ -48,7 +50,8 @@ int fromTwosComplement(const char* binary) {
 }
 
 // Функция для сложения двух двоичных чисел
-void binaryAddition(const char* bin1, const char* bin2, char* result) {
+void binaryAddition(const char* bin1, const char* bin2, char* result)
+{
     int carry = 0;
 
     // Складываем с младших разрядов
@@ -63,7 +66,8 @@ void binaryAddition(const char* bin1, const char* bin2, char* result) {
     result[8] = '\0';
 }
 
-int main() {
+int main()
+{
     int firstNumber, secondNumber;
     char firstBinary[9], secondBinary[9], sumBinary[9];
 
@@ -74,8 +78,7 @@ int main() {
     scanf("%d", &secondNumber);
 
     // Проверка диапазона
-    if (firstNumber < -128 || firstNumber > 127 ||
-        secondNumber < -128 || secondNumber > 127) {
+    if (firstNumber < -128 || firstNumber > 127 || secondNumber < -128 || secondNumber > 127) {
         printf("Ошибка: числа должны быть в диапазоне от -128 до 127\n");
         return 1;
     }
