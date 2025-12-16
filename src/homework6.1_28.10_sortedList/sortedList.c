@@ -18,7 +18,8 @@ SortedList* createSortedList()
 // Уничтожение списка и освобождение памяти
 void destroySortedList(SortedList* list)
 {
-    if (list == NULL) return;
+    if (list == NULL)
+        return;
 
     Node* current = list->head;
     while (current != NULL) {
@@ -142,6 +143,7 @@ void printList(const SortedList* list)
 // Получение размера списка
 int getListSize(const SortedList* list)
 {
-    if (list == NULL) return 0;
+    if (list == NULL)
+        return 0;
     return list->size;
 }
