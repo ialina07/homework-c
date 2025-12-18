@@ -36,42 +36,45 @@ int main()
         printf("Выбор: ");
         if (scanf("%d", &choice) != 1) {
             printf("Ошибка ввода!\n");
-            while(getchar() != '\n');
+            while (getchar() != '\n')
+                ;
             continue;
         }
 
-        switch(choice) {
-            case 0:
-                destroySortedList(myList);
-                printf("Программа завершена\n");
-                return 0;
-            case 1: {
-                int value;
-                printf("Введите число: ");
-                if (scanf("%d", &value) != 1) {
-                    printf("Ошибка: введите число!\n");
-                    while (getchar() != '\n');
-                    break;
-                }
-                addValue(myList, value);
+        switch (choice) {
+        case 0:
+            destroySortedList(myList);
+            printf("Программа завершена\n");
+            return 0;
+        case 1: {
+            int value;
+            printf("Введите число: ");
+            if (scanf("%d", &value) != 1) {
+                printf("Ошибка: введите число!\n");
+                while (getchar() != '\n')
+                    ;
                 break;
             }
-            case 2: {
-                int value;
-                printf("Удалить число: ");
-                if (scanf("%d", &value) != 1) {
-                    printf("Ошибка: введите число!\n");
-                    while (getchar() != '\n');
-                    break;
-                }
-                removeValue(myList, value);
+            addValue(myList, value);
+            break;
+        }
+        case 2: {
+            int value;
+            printf("Удалить число: ");
+            if (scanf("%d", &value) != 1) {
+                printf("Ошибка: введите число!\n");
+                while (getchar() != '\n')
+                    ;
                 break;
             }
-            case 3:
-                printList(myList);
-                break;
-            default:
-                printf("Неверный выбор!\n");
+            removeValue(myList, value);
+            break;
+        }
+        case 3:
+            printList(myList);
+            break;
+        default:
+            printf("Неверный выбор!\n");
         }
     }
 }
@@ -92,7 +95,8 @@ SortedList* createSortedList()
 // Уничтожение списка и освобождение памяти
 void destroySortedList(SortedList* list)
 {
-    if (list == NULL) return;
+    if (list == NULL)
+        return;
 
     Node* current = list->head;
     while (current != NULL) {
@@ -216,6 +220,7 @@ void printList(const SortedList* list)
 // Получение размера списка
 int getListSize(const SortedList* list)
 {
-    if (list == NULL) return 0;
+    if (list == NULL)
+        return 0;
     return list->size;
 }
