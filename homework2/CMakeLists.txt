@@ -11,9 +11,3 @@ add_executable(task1 src/task1.c)
 add_executable(task2 src/task2.c)
 add_executable(task3 src/task3.c)
 add_executable(task4 src/task4.c)
-
-# Дополнительная цель для сборки всех задач
-add_custom_target(all
-    DEPENDS task1 task2 task3 task4
-    COMMENT "Building all 4 tasks"
-)
